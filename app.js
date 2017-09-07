@@ -13,11 +13,11 @@ new Vue({
 			this.monsterHealth = 100;
 		},
 		attack: function(){
-			this.takeDmg(this.genDmg(10, 5), 0);
-			this.takeDmg(this.genDmg(10, 2), 1);
+			this.takeDmg(this.genDmg(10, 5), 1);
+			this.takeDmg(this.genDmg(10, 2), 0);
 		},
 		heal: function(){
-			var heal = this.genDmg(10, 5);
+			var heal = this.genDmg(20, 10);
 			this.playerHealth = (this.playerHealth + heal > 100) ? 100 : this.playerHealth += heal;
 			this.logs.unshift({
 				isPlayer: false,
@@ -26,8 +26,8 @@ new Vue({
 			this.takeDmg(this.genDmg(10, 2), 0);
 		},
 		specialAttack: function(){
-			this.takeDmg(this.genDmg(20, 15), 0);
-			this.takeDmg(this.genDmg(20, 5), 1);
+			this.takeDmg(this.genDmg(20, 15), 1);
+			this.takeDmg(this.genDmg(20, 5), 0);
 		},
 		giveUp: function(){
 			this.gameIsRunning = false;
